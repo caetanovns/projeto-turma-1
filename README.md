@@ -1,7 +1,16 @@
-### Relatório de aula
-## 01/09
-- Criado modelo inicial
-- Próximos passos: 
- - Adicionar o restante dos templates
- - Adicionar Factories e Seeds
-- 
+# 🚗 Projeto: Aluguel de Carros
+
+## 📖 Descrição
+Este projeto é um sistema de **aluguel de carros**, onde os clientes podem se cadastrar, escolher um veículo disponível e realizar uma reserva.  
+O serviço deve gerenciar todas as etapas do processo — desde o cadastro do cliente até a devolução do carro.
+
+---
+
+## 📝 Histórico de Implementações
+
+### 📅 2025-09-02
+- [x] 🏗️ Criação da estrutura inicial do projeto
+- [x] 🗂️ Definição do modelo de clientes
+
+### 📅 2025-09-09
+- [x] 🔍 Adicionado o Controlador e Template das Lojas
