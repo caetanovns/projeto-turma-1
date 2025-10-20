@@ -83,6 +83,9 @@ class LojaController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $loja = Loja::findOrFail($id);
+        $loja->delete();
+
+        return redirect()->route('lojas.index');
     }
 }

@@ -44,6 +44,17 @@
                                             <path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" />
                                         </svg>
                                     </a>
+
+                                    <form action="{{route('lojas.destroy', $loja->id)}}" method="POST" onsubmit="return confirm('Tem certeza que deseja excluir esta loja?');">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="flex items-center justify-center p-2 rounded bg-red-500 hover:bg-red-600 text-white">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                <path fill-rule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zm3 6a1 1 0 10-2 0v6a1 1 0 102 0V8zm-3-1a1 1 0 112 0v6a1 1 0 11-2 0V7z" clip-rule="evenodd" />
+                                            </svg>
+                                        </button>
+                                    </form>
+                                    
                                 </td>
                             </tr>
                             @endforeach
