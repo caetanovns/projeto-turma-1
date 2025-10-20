@@ -12,5 +12,9 @@ O serviço deve gerenciar todas as etapas do processo — desde o cadastro do cl
 - [x] 🏗️ Criação da estrutura inicial do projeto
 - [x] 🗂️ Definição do modelo de clientes
 
-### 📅 2025-09-09
+### 📅 2025-09-08
 - [x] 🔍 Adicionado o Controlador e Template das Lojas
+
+### 2025-10-20
+- [X] Controlador para editar lojas.
+- [ ] Adicionar Veículos.

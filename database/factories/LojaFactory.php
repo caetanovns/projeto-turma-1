@@ -22,9 +22,7 @@ class LojaFactory extends Factory
             'nome_gerente' => $this->faker->name(),
             'telefone' => $this->faker->phoneNumber(),
             'endereco' => $this->faker->address(),
-            'cidade' => $this->faker->city(),          
-            'estado' => $this->faker->state(),
-            'cep' => $this->faker->postcode()
+            'is_aberta' => $this->faker->boolean(),
         ];
     }
 }

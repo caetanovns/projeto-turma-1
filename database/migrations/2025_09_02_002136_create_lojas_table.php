@@ -18,9 +18,7 @@ return new class extends Migration
             $table->string('nome_gerente');
             $table->string('telefone');
             $table->string('endereco');
-            $table->string('cidade');
-            $table->string('estado', 2);
-            $table->string('cep', 10);
+            $table->boolean('is_aberta');
             $table->softDeletes();
             $table->timestamps();
         });

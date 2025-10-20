@@ -22,7 +22,7 @@ class LojaController extends Controller
      */
     public function create()
     {
-        //
+        return view('lojas.create');
     }
 
     /**
@@ -30,7 +30,17 @@ class LojaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $loja = new Loja();
+        $loja->nome_fantasia = $request->nome_fantasia;
+        $loja->razao_social = $request->razao_social;
+        $loja->endereco = $request->endereco;
+        $loja->nome_gerente = $request->nome_gerente;
+        $loja->telefone = $request->telefone;
+        $loja->is_aberta = $request->is_aberta ? true : false;
+
+        $loja->save();
+
+        return redirect()->route('lojas.index');
     }
 
     /**
@@ -38,7 +48,6 @@ class LojaController extends Controller
      */
     public function show(string $id)
     {
-        //
     }
 
     /**
@@ -46,7 +55,9 @@ class LojaController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        return view('lojas.edit', [
+            'loja' => Loja::findOrFail($id)
+        ]);
     }
 
     /**
@@ -54,7 +65,17 @@ class LojaController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $loja = Loja::findOrFail($id);
+        $loja->nome_fantasia = $request->nome_fantasia;
+        $loja->razao_social = $request->razao_social;
+        $loja->endereco = $request->endereco;
+        $loja->nome_gerente = $request->nome_gerente;
+        $loja->telefone = $request->telefone;
+        $loja->is_aberta = $request->is_aberta ? true : false;
+
+        $loja->save();
+
+        return redirect()->route('lojas.index');
     }
 
     /**

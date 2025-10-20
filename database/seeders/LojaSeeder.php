@@ -12,6 +12,6 @@ class LojaSeeder extends Seeder
      */
     public function run(): void
     {
-        \App\Models\Loja::factory(10)->create();
+        \App\Models\Loja::factory(50)->create();
     }
 }

@@ -8,26 +8,44 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="flex justify-end">
+                    <a href="{{route('lojas.create')}}" class="m-4 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Adicionar</a>
+                </div>
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <table class="w-full text-left border-collapse">
                         <thead>
                             <tr>
-                            <th class="px-4 py-2 border-b border-gray-300">Nome Fantasia</th>
-                            <th class="px-4 py-2 border-b border-gray-300">Razão Social</th>
-                            <th class="px-4 py-2 border-b border-gray-300">Gerente</th>
-                            <th class="px-4 py-2 border-b border-gray-300">Telefone</th>
-                            <th class="px-4 py-2 border-b border-gray-300">Cidade/UF</th>
+                                <th class="px-4 py-2 border-b border-gray-300">Nome Fantasia</th>
+                                <th class="px-4 py-2 border-b border-gray-300">Razão Social</th>
+                                <th class="px-4 py-2 border-b border-gray-300">Gerente</th>
+                                <th class="px-4 py-2 border-b border-gray-300">Telefone</th>
+                                <th class="px-4 py-2 border-b border-gray-300 text-center">Status</th>
+                                <th class="px-4 py-2 border-b border-gray-300 text-center">Ações</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach($lojas as $loja)
-                                <tr>
-                                    <td class="px-4 py-2 border-b border-gray-300">{{$loja->nome_fantasia}}</td>
-                                    <td class="px-4 py-2 border-b border-gray-300">{{$loja->razao_social}}</td>
-                                    <td class="px-4 py-2 border-b border-gray-300">{{$loja->nome_gerente}}</td>
-                                    <td class="px-4 py-2 border-b border-gray-300">{{$loja->telefone}}</td>
-                                    <td class="px-4 py-2 border-b border-gray-300">{{$loja->cidade}}</td>
-                                </tr>
+                            <tr>
+                                <td class="px-4 py-2 border-b border-gray-300">{{$loja->nome_fantasia}}</td>
+                                <td class="px-4 py-2 border-b border-gray-300">{{$loja->razao_social}}</td>
+                                <td class="px-4 py-2 border-b border-gray-300">{{$loja->nome_gerente}}</td>
+                                <td class="px-4 py-2 border-b border-gray-300">{{$loja->telefone}}</td>
+                                <td class="px-4 py-2 border-b border-gray-300 text-center">
+                                    @if($loja->is_aberta)
+                                    <span class="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-sm dark:bg-green-900 dark:text-green-300">ABERTA</span>
+                                    @else
+                                    <span class="bg-red-100 text-red-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-sm dark:bg-red-900 dark:text-red-300">FECHADA</span>
+                                    @endif
+                                </td>
+                                <td class="px-4 py-2 border-b border-gray-300 text-center flex justify-center gap-4">
+                                    <a href="{{route('lojas.edit', $loja->id)}}" class="flex items-center justify-center p-2 rounded bg-blue-500 hover:bg-blue-600 text-white">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                            <path d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z" />
+                                            <path fill-rule="evenodd" d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z" clip-rule="evenodd" />
+                                        </svg>
+                                    </a>
+                                </td>
+                            </tr>
                             @endforeach
                         </tbody>
                     </table>
