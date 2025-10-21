@@ -18,3 +18,4 @@ O serviço deve gerenciar todas as etapas do processo — desde o cadastro do cl
 ### 2025-10-20
 - [X] Controlador para editar lojas.
 - [ ] Adicionar Veículos.
+- [ ] adicionar fotos do veículo.
