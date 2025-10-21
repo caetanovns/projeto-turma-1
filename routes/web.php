@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LojaController;
 use App\Http\Controllers\CategoriaVeiculoController;
+use App\Http\Controllers\VeiculoController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -23,6 +24,7 @@ Route::middleware('auth')->group(function () {
 
 Route::resource('/lojas', LojaController::class);
 Route::resource('/categorias',CategoriaVeiculoController::class);
+Route::resource('/veiculos', VeiculoController::class);
 
 
 require __DIR__.'/auth.php';
