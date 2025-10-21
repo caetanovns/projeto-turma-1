@@ -11,4 +11,10 @@ class CategoriaVeiculo extends Model
         'descricao',
         'preco_diaria'
     ];
+
+
+    public function veiculos()
+    {
+        return $this->hasMany(Veiculo::class);
+    }
 }
